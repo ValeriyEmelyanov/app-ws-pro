@@ -2,6 +2,8 @@ package com.example.appwspro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class AppWsProApplication {
@@ -10,4 +12,8 @@ public class AppWsProApplication {
 		SpringApplication.run(AppWsProApplication.class, args);
 	}
 
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }
