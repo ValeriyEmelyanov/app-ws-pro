@@ -110,16 +110,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\t\"email\":\"test11@test.com\",\n\t\t\"password\":\"123\"\n}"
+					"raw": "{\n\t\t\"email\":\"test9@test.com\",\n\t\t\"password\":\"123\"\n}"
 				},
 				"url": {
-					"raw": "http://Localhost:8080/login",
+					"raw": "http://Localhost:8080/users/login",
 					"protocol": "http",
 					"host": [
 						"Localhost"
 					],
 					"port": "8080",
 					"path": [
+						"users",
 						"login"
 					]
 				}
