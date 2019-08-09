@@ -1,4 +1,4 @@
-package com.example.appwspro;
+package com.example.appwspro.io.repository;
 
 import com.example.appwspro.io.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;

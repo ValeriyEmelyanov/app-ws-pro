@@ -1,6 +1,6 @@
 package com.example.appwspro.service.impl;
 
-import com.example.appwspro.UserRepository;
+import com.example.appwspro.io.repository.UserRepository;
 import com.example.appwspro.io.entity.UserEntity;
 import com.example.appwspro.service.UserService;
 import com.example.appwspro.shared.Utils;
