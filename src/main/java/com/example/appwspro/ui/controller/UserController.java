@@ -1,8 +1,10 @@
 package com.example.appwspro.ui.controller;
 
+import com.example.appwspro.exceptions.UserServiceException;
 import com.example.appwspro.service.UserService;
 import com.example.appwspro.shared.dto.UserDto;
 import com.example.appwspro.ui.model.request.UserDetailsRequestModel;
+import com.example.appwspro.ui.model.response.ErrorMessages;
 import com.example.appwspro.ui.model.response.UserRest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,11 @@ public class UserController {
             consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) {
+
+        if (userDetails.getFirstName().isEmpty()) {
+            throw new UserServiceException(ErrorMessages.MISSING_REQUIRED_FIELD.getErrorMessege());
+        }
+
         UserRest returnValue = new UserRest();
 
         UserDto userDto = new UserDto();
