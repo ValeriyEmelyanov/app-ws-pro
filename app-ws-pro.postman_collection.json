@@ -9,7 +9,13 @@
 			"name": "GET: /users",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:8080/users",
 					"protocol": "http",
@@ -19,6 +25,13 @@
 					"port": "8080",
 					"path": [
 						"users"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -63,16 +76,27 @@
 			"name": "PUT: /users",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"email\":\"test9@test.com\",\n\t\t\"password\":\"123\"\n}\t"
+				},
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:8080/users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"users"
+						"users",
+						""
 					]
 				}
 			},
@@ -98,7 +122,7 @@
 			"response": []
 		},
 		{
-			"name": "POST: /login",
+			"name": "POST: /users/login",
 			"request": {
 				"method": "POST",
 				"header": [
