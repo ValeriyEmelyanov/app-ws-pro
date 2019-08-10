@@ -85,10 +85,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\t\"email\":\"test9@test.com\",\n\t\t\"password\":\"123\"\n}\t"
+					"raw": "{\n\t\t\"firstName\":\"\",\n\t\t\"lastName\":\"Kargopolov\",\n}\t"
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/",
+					"raw": "http://localhost:8080/users/z0Q8WxrGPVWqDadnoQU25dYUbk0Awk",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -96,7 +96,7 @@
 					"port": "8080",
 					"path": [
 						"users",
-						""
+						"z0Q8WxrGPVWqDadnoQU25dYUbk0Awk"
 					]
 				}
 			},
