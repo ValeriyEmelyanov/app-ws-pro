@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("users")    // http://localhost:8080/users
 public class UserController {
@@ -72,6 +76,22 @@ public class UserController {
         userService.deleteUser(id);
 
         returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
+        return returnValue;
+    }
+
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public List<UserRest> getUsers(
+            @RequestParam(value = "page", defaultValue = "1") int page,
+            @RequestParam(value = "limit", defaultValue = "25") int limit) {
+        List<UserRest> returnValue = new ArrayList<>();
+        List<UserDto> users = userService.getUsers(page - 1, limit);
+
+        for (UserDto userDto : users) {
+            UserRest userModel = new UserRest();
+            BeanUtils.copyProperties(userDto, userModel);
+            returnValue.add(userModel);
+        }
+
         return returnValue;
     }
 }
