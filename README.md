@@ -13,3 +13,8 @@ Project imlement features like:
 - Connect MySQL database
 - Use Spring Data JPA
 
+##### Running Web Services App without STS
+- Change current catalog to the project catalog. 
+- mvn install
+- mvn spring-boot:run
+- ctrl+C
