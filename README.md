@@ -13,8 +13,23 @@ Project imlement features like:
 - Connect MySQL database
 - Use Spring Data JPA
 
-##### Running Web Services App without STS
-- Change current catalog to the project catalog. 
+#### Notes
+
+##### Running Web Services App without STS (jar)
+- Change current catalog to the project catalog 
+- Build thr project: mvn install
+- Run application: mvn spring-boot:run
+- Quit: ctrl+C
+
+##### Running Web Services App as a Java application (jar)
+- Change current catalog to the project catalog
+- Build thr project: mvn install
+- Upload the deployable .jar file to a production server
+- Run application: java -jar app-ws-pro-0.0.1-SNAPSHOT.jar
+- Quit: ctrl+C
+
+##### Generating WAR file
+- mvn clean
 - mvn install
-- mvn spring-boot:run
-- ctrl+C
+
+... and deploying to Apache Tomcat

@@ -11,6 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>app-ws-pro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>app-ws-pro</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -56,7 +57,13 @@
 			<version>0.9.1</version>
 		</dependency>
 
-        <dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
