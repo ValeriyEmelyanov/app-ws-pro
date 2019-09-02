@@ -12,19 +12,64 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:8080/app-ws-pro/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"app-ws-pro",
 						"users"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /users/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app-ws-pro/users/z0Q8WxrGPVWqDadnoQU25dYUbk0Awk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-ws-pro",
+						"users",
+						"z0Q8WxrGPVWqDadnoQU25dYUbk0Awk"
 					],
 					"query": [
 						{
@@ -56,16 +101,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\t\"firstName\":\"Sergey\",\n\t\t\"lastName\":\"Kargopolov\",\n\t\t\"email\":\"test@test.com\",\n\t\t\"password\":\"123\"\n}"
+					"raw": "{\n\t\t\"firstName\":\"Sergey\",\n\t\t\"lastName\":\"Kargopolov\",\n\t\t\"email\":\"test14@test.com\",\n\t\t\"password\":\"123\",\n\t\t\"addresses\":[\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"billing\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"shipping\"\n\t\t\t}\n\t\t\t]\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://Localhost:8080/app-ws-pro/users",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"Localhost"
 					],
 					"port": "8080",
 					"path": [
+						"app-ws-pro",
 						"users"
 					]
 				}
@@ -81,20 +127,27 @@
 						"key": "Authorization",
 						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
 						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\t\"firstName\":\"\",\n\t\t\"lastName\":\"Kargopolov\",\n}\t"
+					"raw": "{\n\t\t\"firstName\":\"Sergey\",\n\t\t\"lastName\":\"Kargopolov\"\n}\t"
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/z0Q8WxrGPVWqDadnoQU25dYUbk0Awk",
+					"raw": "http://localhost:8080/app-ws-pro/users/z0Q8WxrGPVWqDadnoQU25dYUbk0Awk",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"app-ws-pro",
 						"users",
 						"z0Q8WxrGPVWqDadnoQU25dYUbk0Awk"
 					]
@@ -119,13 +172,14 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/users/AoSskIdlz0djpLZItzYPBiGIZdK8fY",
+					"raw": "http://localhost:8080/app-ws-pro/users/AoSskIdlz0djpLZItzYPBiGIZdK8fY",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"app-ws-pro",
 						"users",
 						"AoSskIdlz0djpLZItzYPBiGIZdK8fY"
 					]
@@ -149,15 +203,57 @@
 					"raw": "{\n\t\t\"email\":\"test9@test.com\",\n\t\t\"password\":\"123\"\n}"
 				},
 				"url": {
-					"raw": "http://Localhost:8080/users/login",
+					"raw": "http://Localhost:8080/app-ws-pro/users/login",
 					"protocol": "http",
 					"host": [
 						"Localhost"
 					],
 					"port": "8080",
 					"path": [
+						"app-ws-pro",
 						"users",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /users?page-1&limit=50",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app-ws-pro/users?page-1&limit=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-ws-pro",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page-1",
+							"value": null
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						}
 					]
 				}
 			},

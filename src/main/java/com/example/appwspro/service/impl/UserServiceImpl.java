@@ -5,8 +5,10 @@ import com.example.appwspro.io.repository.UserRepository;
 import com.example.appwspro.io.entity.UserEntity;
 import com.example.appwspro.service.UserService;
 import com.example.appwspro.shared.Utils;
+import com.example.appwspro.shared.dto.AddressDto;
 import com.example.appwspro.shared.dto.UserDto;
 import com.example.appwspro.ui.model.response.ErrorMessages;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -50,16 +52,25 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("Record already exists!");
         }
 
-        UserEntity userEntity = new UserEntity();
-        BeanUtils.copyProperties(user, userEntity);
+        for (AddressDto address : user.getAddresses()) {
+            address.setUserDetails(user);
+            address.setAddressId(utils.generateAddressId(30));
+        }
+
+
+        //UserEntity userEntity = new UserEntity();
+        //BeanUtils.copyProperties(user, userEntity);
+        ModelMapper modelMapper = new ModelMapper();
+        UserEntity userEntity = modelMapper.map(user, UserEntity.class);
 
         userEntity.setUserId(utils.generateUserId(30));
         userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 
         UserEntity storedUserDetails = userRepository.save(userEntity);
 
-        UserDto returnValue = new UserDto();
-        BeanUtils.copyProperties(storedUserDetails, returnValue);
+        //UserDto returnValue = new UserDto();
+        //BeanUtils.copyProperties(storedUserDetails, returnValue);
+        UserDto returnValue = modelMapper.map(storedUserDetails, UserDto.class);
 
         return returnValue;
     }
