@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,12 +24,11 @@ public class UserController {
     @GetMapping(path = "/{id}",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public UserRest getUser(@PathVariable String id) {
-        UserRest returnValue = new UserRest();
-
         UserDto userDto = userService.getUserByUserId(id);
-        BeanUtils.copyProperties(userDto, returnValue);
 
-        return returnValue;
+        ModelMapper modelMapper = new ModelMapper();
+
+        return modelMapper.map(userDto, UserRest.class);
     }
 
     @PostMapping(
@@ -42,15 +40,10 @@ public class UserController {
             throw new UserServiceException(ErrorMessages.MISSING_REQUIRED_FIELD.getErrorMessege());
         }
 
-        //UserRest returnValue = new UserRest();
-
-        //UserDto userDto = new UserDto();
-        //BeanUtils.copyProperties(userDetails, userDto);
         ModelMapper modelMapper = new ModelMapper();
         UserDto userDto = modelMapper.map(userDetails, UserDto.class);
 
         UserDto createdUser = userService.createUser(userDto);
-        //BeanUtils.copyProperties(createdUser, returnValue);
         UserRest returnValue = modelMapper.map(createdUser, UserRest.class);
 
         return returnValue;

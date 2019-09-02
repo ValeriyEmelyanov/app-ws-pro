@@ -1,8 +1,8 @@
 package com.example.appwspro.service.impl;
 
 import com.example.appwspro.exceptions.UserServiceException;
-import com.example.appwspro.io.repository.UserRepository;
 import com.example.appwspro.io.entity.UserEntity;
+import com.example.appwspro.io.repository.UserRepository;
 import com.example.appwspro.service.UserService;
 import com.example.appwspro.shared.Utils;
 import com.example.appwspro.shared.dto.AddressDto;
@@ -57,9 +57,6 @@ public class UserServiceImpl implements UserService {
             address.setAddressId(utils.generateAddressId(30));
         }
 
-
-        //UserEntity userEntity = new UserEntity();
-        //BeanUtils.copyProperties(user, userEntity);
         ModelMapper modelMapper = new ModelMapper();
         UserEntity userEntity = modelMapper.map(user, UserEntity.class);
 
@@ -68,11 +65,7 @@ public class UserServiceImpl implements UserService {
 
         UserEntity storedUserDetails = userRepository.save(userEntity);
 
-        //UserDto returnValue = new UserDto();
-        //BeanUtils.copyProperties(storedUserDetails, returnValue);
-        UserDto returnValue = modelMapper.map(storedUserDetails, UserDto.class);
-
-        return returnValue;
+        return modelMapper.map(storedUserDetails, UserDto.class);
     }
 
     @Override
@@ -83,10 +76,9 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException(email);
         }
 
-        UserDto returnValue = new UserDto();
-        BeanUtils.copyProperties(userEntity, returnValue);
+        ModelMapper modelMapper = new ModelMapper();
 
-        return returnValue;
+        return modelMapper.map(userEntity, UserDto.class);
     }
 
     @Override
@@ -97,10 +89,9 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("User with ID: " + userId + " not found");
         }
 
-        UserDto returnValue = new UserDto();
-        BeanUtils.copyProperties(userEntity, returnValue);
+        ModelMapper modelMapper = new ModelMapper();
 
-        return returnValue;
+        return modelMapper.map(userEntity, UserDto.class);
     }
 
     @Override
