@@ -11,12 +11,15 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Link;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 
 @RestController
 @RequestMapping("users")    // http://localhost:8080/users
@@ -121,6 +124,24 @@ public class UserController {
 
         ModelMapper modelMapper = new ModelMapper();
 
-        return modelMapper.map(addressDto, AddressRest.class);
+        Link addressLink = linkTo(UserController.class)
+                .slash(userId)
+                .slash("addresses")
+                .slash(addressId)
+                .withSelfRel();
+        Link userLink = linkTo(UserController.class)
+                .slash(userId)
+                .withRel("user");
+        Link addressesLink = linkTo(UserController.class)
+                .slash(userId)
+                .slash("addresses")
+                .withRel("addresses");
+
+        AddressRest addressRestModel = modelMapper.map(addressDto, AddressRest.class);
+        addressRestModel.add(addressLink);
+        addressRestModel.add(userLink);
+        addressRestModel.add(addressesLink);
+
+        return addressRestModel;
     }
 }
