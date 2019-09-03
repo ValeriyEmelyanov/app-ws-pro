@@ -299,6 +299,87 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GET: /users/id/addresses/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app-ws-pro/users/psLdSxuxjK4JdFtNCu2kOSM2xJAnKG/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-ws-pro",
+						"users",
+						"psLdSxuxjK4JdFtNCu2kOSM2xJAnKG",
+						"addresses"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /users/id/addresses/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app-ws-pro/users/psLdSxuxjK4JdFtNCu2kOSM2xJAnKG/addresses/wKT46zRA2s1pXgpz0AdmbSZGPX8KU6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-ws-pro",
+						"users",
+						"psLdSxuxjK4JdFtNCu2kOSM2xJAnKG",
+						"addresses",
+						"wKT46zRA2s1pXgpz0AdmbSZGPX8KU6"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
