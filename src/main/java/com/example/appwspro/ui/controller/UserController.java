@@ -1,16 +1,20 @@
 package com.example.appwspro.ui.controller;
 
 import com.example.appwspro.exceptions.UserServiceException;
+import com.example.appwspro.service.AddressService;
 import com.example.appwspro.service.UserService;
+import com.example.appwspro.shared.dto.AddressDto;
 import com.example.appwspro.shared.dto.UserDto;
 import com.example.appwspro.ui.model.request.UserDetailsRequestModel;
 import com.example.appwspro.ui.model.response.*;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +24,9 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    AddressService addressService;
 
     @GetMapping(path = "/{id}",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -87,6 +94,21 @@ public class UserController {
             UserRest userModel = new UserRest();
             BeanUtils.copyProperties(userDto, userModel);
             returnValue.add(userModel);
+        }
+
+        return returnValue;
+    }
+
+    @GetMapping(path = "/{id}/addresses",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public List<AddressRest> getUserAddresses(@PathVariable String id) {
+        List<AddressRest> returnValue = new ArrayList<>();
+
+        List<AddressDto> addressesDto = addressService.getAddresses(id);
+
+        if (addressesDto != null && !addressesDto.isEmpty()) {
+            Type listType = new TypeToken<List<AddressRest>>() {}.getType();
+            returnValue = new ModelMapper().map(addressesDto, listType);
         }
 
         return returnValue;

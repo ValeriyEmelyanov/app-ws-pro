@@ -50,7 +50,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NjA3MzAxNH0.XMsf9kINc-Mpw4YJYnxMEYhcbVaO16ank3L29sv0_rW2Tmg_KaxMni2hy0TH1FEMKXlxny5Q3yKnLql-C904_g",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
 						"type": "text"
 					},
 					{
@@ -60,7 +60,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/app-ws-pro/users/z0Q8WxrGPVWqDadnoQU25dYUbk0Awk",
+					"raw": "http://localhost:8080/app-ws-pro/users/psLdSxuxjK4JdFtNCu2kOSM2xJAnKG/addresses",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,7 +69,8 @@
 					"path": [
 						"app-ws-pro",
 						"users",
-						"z0Q8WxrGPVWqDadnoQU25dYUbk0Awk"
+						"psLdSxuxjK4JdFtNCu2kOSM2xJAnKG",
+						"addresses"
 					],
 					"query": [
 						{
@@ -101,7 +102,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\t\"firstName\":\"Sergey\",\n\t\t\"lastName\":\"Kargopolov\",\n\t\t\"email\":\"test14@test.com\",\n\t\t\"password\":\"123\",\n\t\t\"addresses\":[\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"billing\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"shipping\"\n\t\t\t}\n\t\t\t]\n}"
+					"raw": "{\n\t\t\"firstName\":\"Sergey\",\n\t\t\"lastName\":\"Kargopolov\",\n\t\t\"email\":\"test16@test.com\",\n\t\t\"password\":\"123\",\n\t\t\"addresses\":[\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"billing\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"city\":\"Vancouver\",\n\t\t\t\t\"country\":\"Canada\",\n\t\t\t\t\"streetName\":\"123 Street name\",\n\t\t\t\t\"postalCode\":\"ABCCBA\",\n\t\t\t\t\"type\":\"shipping\"\n\t\t\t}\n\t\t\t]\n}"
 				},
 				"url": {
 					"raw": "http://Localhost:8080/app-ws-pro/users",
@@ -253,6 +254,46 @@
 						{
 							"key": "limit",
 							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /users/id/addresses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/app-ws-pro/users/psLdSxuxjK4JdFtNCu2kOSM2xJAnKG/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app-ws-pro",
+						"users",
+						"psLdSxuxjK4JdFtNCu2kOSM2xJAnKG",
+						"addresses"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
 						}
 					]
 				}
