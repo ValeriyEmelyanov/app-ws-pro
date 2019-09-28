@@ -266,12 +266,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU3MDUxODA0Mn0.pySQDOGbafcS2uwt-sGIUEnxzBwiKtDx8qcaqCcDKIhNeeF55fGfEN0gaeb8Id9vhX-tphLUgjXrtCcYwmb4WA",
 						"type": "text"
 					},
 					{
 						"key": "Accept",
-						"value": "application/json",
+						"value": "application/hal+json",
 						"type": "text"
 					}
 				],
@@ -306,12 +306,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU2NzYwMzAwNH0.Xn7t9XVnUHSfQ_qNIXSvAV7B6ap9TLr5Wcmubk-z9BIutf_YWmcBExsez8byg4VNCZTC0lOdiIypIy-0ehqSXw",
+						"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0OUB0ZXN0LmNvbSIsImV4cCI6MTU3MDUxODA0Mn0.pySQDOGbafcS2uwt-sGIUEnxzBwiKtDx8qcaqCcDKIhNeeF55fGfEN0gaeb8Id9vhX-tphLUgjXrtCcYwmb4WA",
 						"type": "text"
 					},
 					{
 						"key": "Accept",
-						"value": "application/json",
+						"value": "application/hal+json",
 						"type": "text"
 					}
 				],
